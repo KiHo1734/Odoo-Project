@@ -1,0 +1,23 @@
+<odoo>
+    <!-- เมนูหลัก (ไม่อยู่ภายใต้เมนูใด) -->
+    <menuitem id="menu_custom_hr_root" name="Custom HR" sequence="10"/>
+
+    <!-- Action สำหรับเปิด list view -->
+    <record id="action_custom_hr_model" model="ir.actions.act_window">
+        <field name="name">Custom HR Records</field>
+        <field name="res_model">custom.hr.model</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create a new record.
+            </p>
+        </field>
+    </record>
+
+    <!-- เมนูย่อยที่ผูกกับ action -->
+    <menuitem id="menu_custom_hr_records" 
+              name="Employee Details" 
+              parent="menu_custom_hr_root" 
+              action="action_custom_hr_model"
+              sequence="10"/>
+</odoo>
